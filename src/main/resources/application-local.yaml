@@ -1,0 +1,22 @@
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/currency?currentSchema=public
+    username: postgres
+    password: postgres
+
+  liquibase:
+    liquibase-schema: public
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+com:
+  test:
+    free-currency:
+      base-url: https://api.freecurrencyapi.com
+      api-access-key: test
+      find-latest-rates-path: /v1/latest

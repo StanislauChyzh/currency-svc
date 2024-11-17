@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  postgres:
+    image: "postgres:local"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_DB=currency
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"

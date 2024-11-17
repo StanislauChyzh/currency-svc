@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: currency-svc
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/currency?currentSchema=public
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    liquibase-schema: public
+
+  cache:
+    cache-names: rates
+    type: simple
+
+com:
+  test:
+    free-currency:
+      base-url: http://localhost:8567
+      api-access-key: test-key
+      find-latest-rates-path: /v1/latest
